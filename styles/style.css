@@ -3,3 +3,136 @@
   font-family: Cafeteria;
   src: url(fonts/Cafeteria-Bold.otf);
 }
+:root {
+  --primary-color: #4b3f72;
+  --secondary-color: #1f2041;
+
+  --heading-font: "Rowdies", sans-serif;
+  --paragraph-font: "Cafeteria", "Roboto", Helvetica, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--paragraph-font);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* heading */
+nav {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-around;
+
+  img {
+    max-height: 100px;
+    padding: 20px;
+  }
+
+  a:nth-of-type(odd) {
+    color: white;
+    font-family: var(--heading-font);
+    font-size: 2em;
+    text-decoration: none;
+    padding: 51px 20px;
+    align-self: center;
+  }
+
+  a:hover {
+    background-color: var(--secondary-color);
+  }
+
+}
+
+/* content */
+body { 
+  #banner {
+    max-width: 100%;
+    display: block;
+    margin: auto auto;
+  }
+
+  p {
+    font-size: 1.3em;
+    margin-top: 0;
+  }
+}
+
+main {
+  max-width: 80%;
+  margin: auto auto;
+
+  #circle-of-winning {
+    display: block;
+    margin: auto auto;
+    max-width: 100%;
+  }
+}
+
+h2, h3, h4 {
+  font-family: var(--heading-font);
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 5px;
+  margin-top: 40px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 3em;
+  padding: 30px 0px;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  min-height: calc(100% - 300px);
+
+  a {
+    color: white;
+    font-family: var(--heading-font);
+    text-decoration: none;
+  }
+
+  #footer-line-divider {
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0.5) 11%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 86%, rgba(255,255,255,0.5) 92%, rgba(0,0,0,0) 100%);
+    align-self: center;
+    justify-self: center;
+    height: 92%;
+    width: 3px;
+  }
+
+  #footer-colored-box {
+    padding: 20px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 30px 1fr;
+
+    .footer-section:nth-of-type(1) {
+      text-align: right;
+    }
+    .footer-section:nth-of-type(2) {
+      text-align: left;
+    }
+  }
+}
+
+/* adaptive stuff */
+@media screen and (min-width: 800px) {
+  body {
+    #banner {
+      clip-path: inset(min(calc(100% / 3), 10vw) 0px min(calc(100% / 4), 7vw) 0px);
+      width: 100%;
+      margin-top: calc(-1 * min(calc(100% / 3), 10vw));
+      margin-bottom: calc(-1 * min(calc(100% / 4), 7vw));
+    }
+  }
+}
