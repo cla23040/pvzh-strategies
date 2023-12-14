@@ -61,6 +61,12 @@ body {
     font-size: 1.3em;
     margin-top: 0;
   }
+
+  .heading-image {
+    max-width: 800px;
+    margin: auto;
+    width: 50%;
+  }
 }
 
 main {
